@@ -1,0 +1,15 @@
+conda create --name mydjangoenv django
+
+conda create -name mydjangoenv python=3.5
+conda info --envs --> to list all the environmentss
+activate mydjangoenv
+
+deactivate 
+
+creates a project with below command
+
+django-admin startproject first_project -- for project
+
+this below command create a simple application 
+python manage.py startapp first-app
+python manage.py runserver
