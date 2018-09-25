@@ -1,0 +1,55 @@
+objective:
+To store and display information from components and vulnerabilities found in particular application from respective csv's(build_components.csv,build_vulnerabilities.csv)
+
+This information should be organised in way such that entry should have a cve with path of component and build where it is found indicating a status as fixed or not fixed 
+
+In some cases cve found in previous build may not be found in new build, tool should list these cve.
+In some cases a cve is found new, such cve are considered as new vulnerabilities.
+tool should track these details and display,tool should be able to capture build scan changes with input of 2 builds (query)
+
+
+
+Basic web Navigation 
+1. navigate to ftp url and pull csv file (csv file should be uploaded to /media and data should be saved in database)
+
+
+2.user clicks on build, which lists  components.csv and vulnerabilities.csv. 
+it should also indicate if particular csv is already imported into tool or not.
+query: does the tool allow to import both csv's to analyze or does the user has choice to import and analyze any one csv
+  2.1 if flagged already imported 
+    2.1.1 User can click on file to view page list with results
+  2.2 if flagged not imported(import option available)
+    2.2.1 user imports file
+    2.2.2 after import list with results
+
+	query: when imported should the results be specific for a build or irrespective of a build.
+	below results are assumed to be specific to build
+3. list with results (steps)
+   3.1 list by components
+   3.2 list by vulnerabilities
+   3.3 list by fixed 
+   3.4 list by not fixed
+   3.5 list new vulnerabilities
+   3.6 (query) excluded cve w.r.t previous builds
+   
+
+3.1 List by Components page will show as below 
+componentname,total vulnerabilities,no of files,verison,latestverison,licensetype,componenttype,
+--> Clicking on componentname will list file informaiton and vulnerabilities.This vulnerabilities list should have informaiton as fixed or notfixed 
+
+3.2 List by Vulnerabilities page will show as below
+cve,component,staus(fixed/notfixed)
+--> Clicking on cve will list details of cve and bugzill link, a provision for user to edit/add bugzilla url,and status(fixed/notfixed).
+
+3.3 List by Vulnerabilities(fixed)
+cve,component,staus(fixed/notfixed)
+--> Clicking on cve will list details of cve and bugzill link, a provision for user to edit/add bugzilla url.
+  
+3.4 List by Vulnerabilities(Notfixed)
+cve,component,staus(fixed/notfixed)
+--> Clicking on cve will list details of cve and bugzill link, a provision for user to view bugzilla url.	
+
+3.5 List new vulnerabilities for this specific build
+
+	
+
